@@ -17,7 +17,7 @@ class Square:
         return '{}, {}'.format(self.x, self.y)
 
     def draw_square(self):
-        pygame.draw.rect(win, (255,0,0), (self.x, self.y, 20, 20))
+        pygame.draw.rect(win, (0,255,0), (self.x, self.y, 20, 20))
 
 class Snake:
     def __init__(self, pos_list):
@@ -91,7 +91,6 @@ pygame.display.update()
 run = True
 food = Food()
 food.generate_food_coord(snake.pos_list)
-print(food.x, food.y)
 
 direction = 'r'
 eat = False
@@ -134,7 +133,6 @@ while run:
         run = False
 
     if snake.if_finds_food(food):
-        print('Food!')
         food.generate_food_coord(snake.pos_list)
         print(food.x, food.y)
         eat = True
